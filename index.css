@@ -17,10 +17,15 @@ header {
     align-items: center;
     padding: 20px 0;
 }
-
+.kelly-slab-regular {
+    font-family: "Kelly Slab", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 .logo {
     font-size: 32px;
     font-weight: bold;
+    font-family: "Kelly Slab", sans-serif;
 }
 
 .auth-buttons button {
@@ -45,6 +50,7 @@ header {
     margin-bottom: 20px;
     border-radius: 10px;
     width: 20%;
+    height: 40px;
 }
 
 .offer-banner p {
@@ -59,10 +65,12 @@ header {
     color: white;
     cursor: pointer;
     border-radius: 10px;
+    
 }
 
 .search-bar {
     margin-bottom: 20px;
+
 }
 
 .search-bar input {
@@ -72,6 +80,7 @@ header {
     border: none;
     background-color: #1c1c1c;
     color: white;
+    border-radius: 20px;
 }
 
 .games-section {
@@ -93,4 +102,5 @@ header {
     height: 200px;
     background-color: #cccccc;
     border-radius: 10px;
+    cursor: pointer;
 }
