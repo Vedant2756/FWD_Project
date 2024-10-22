@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script>
+        function Validate() {
+            var firstname = document.getElementById("fname").value;
+            var lastname = document.getElementById("lname").value;
+            var age = document.getElementById("age").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var board = document.getElementById("board").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var SAP = document.getElementById("SAP").value;
+
+            var ch_age = /^[0-9]{1,3}$/;
+            var CH_phone = /^[0-9]{10}$/;
+            var ch_email = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
+            var ch_username = /^[a-zA-Z0-9_.]{8,}$/;
+
+            if (!gender) {
+                alert("Please select a gender");
+                return false;
+            }
+            if (lastname=="") {
+                alert("The last name is empty");
+                return false;
+            }
+            if (firstname== "") {
+                alert("First name is empty");
+                return false;
+            }
+            if (age=="") {
+                alert("Age is left empty");
+                return false;
+            }
+            if (!ch_age.test(age)) {
+                alert("Please enter a valid age");
+                return false;
+            }
+            if (username == "") {
+                alert("Please enter your username");
+                return false;
+            }
+            if (!ch_username.test(username)) {
+                alert("Enter a valid username (minimum 8 characters)");
+                return false;
+            }
+            if (phone == "") {
+                alert("Enter your phone number");
+                return false;
+            }
+            if (!CH_phone.test(phone)) {
+                alert("Enter a valid phone number (10 digits)");
+                return false;
+            }
+            if (SAP == "") {
+                alert("Enter your SAP ID");
+                return false;
+            }
+            if (!CH_phone.test(SAP)) {
+                alert("Enter a valid SAP ID (10 digits)");
+                return false;
+            }
+            if (email == "") {
+                alert("Email is left empty");
+                return false;
+            }
+            if (!ch_email.test(email)) {
+                alert("Enter a valid email address");
+                return false;
+            }
+            if (board == "") {
+                alert("Please select a board");
+                return false;
+            }
+            var brand_nike = document.getElementById("brand_nike").checked;
+            var brand_puma = document.getElementById("brand_puma").checked;
+            var brand_adidas = document.getElementById("brand_adidas").checked;
+            if (!brand_nike && !brand_puma && !brand_adidas) {
+                alert("Please select at least one brand");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <form method="get" novalidate>
+        First Name: <input type="text" id="fname"><br><br>
+        Last Name: <input type="text" id="lname"><br><br>
+        Age: <input type="text" id="age"><br><br>
+        Gender: <br>
+        Male: <input type="radio" value="male" name="gender">
+        Female: <input type="radio" value="Female" name="gender"><br><br>
+        Username: <input type="text" id="username"><br><br>
+        Password: <input type="password" id="password" placeholder="8-30 characters"><br><br>
+        Choose a board:
+        <select id="board">
+            <option value="">--Select--</option>
+            <option value="IGCSE">IGCSE</option>
+            <option value="SSC">SSC</option>
+        </select><br><br>
+        Choose A Brand:<br>
+        NIKE: <input type="checkbox" value="NIKE" id="brand_nike"><br>
+        PUMA: <input type="checkbox" value="PUMA" id="brand_puma"><br>
+        ADIDAS: <input type="checkbox" value="ADIDAS" id="brand_adidas"><br><br>
+        Phone Number: <input type="text" id="phone"><br><br>
+        Email: <input type="text" id="email" placeholder="xyz@gmail.com"><br><br>
+        SAP ID: <input type="text" id="SAP"><br><br>
+        <button onclick="return Validate()" type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>

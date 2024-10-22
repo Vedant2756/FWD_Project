@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Log In</title>
+    <style>
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+            animation: animate 3s linear infinite;
+        }
+
+        span::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 1px;
+            background: linear-gradient(90deg, #fff, transparent);
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(315deg) translateX(0);
+                opacity: 1;
+            }
+
+            70% {
+                opacity: 1;
+
+            }
+
+            100% {
+                transform: rotate(315deg) translateX(-1500px);
+                opacity: 0;
+
+            }
+
+        }
+
+        span:nth-child(1) {
+            top: 0;
+            right: 0;
+            left: initial;
+            animation-delay: 0;
+            animation-duration: 1.4s;
+        }
+
+        span:nth-child(2) {
+            top: 0;
+            right: 80px;
+            left: initial;
+            animation-delay: 0.2s;
+            animation-duration: 1.8s;
+        }
+
+        span:nth-child(3) {
+            top: 80px;
+            right: 0px;
+            left: initial;
+            animation-delay: 0.4s;
+            animation-duration: 2.2s;
+        }
+
+        span:nth-child(4) {
+            top: 0;
+            right: 180px;
+            left: initial;
+            animation-delay: 0.6s;
+            animation-duration: 2.1s;
+        }
+
+        span:nth-child(5) {
+            top: 0;
+            right: 400px;
+            left: initial;
+            animation-delay: 0.8s;
+            animation-duration: 2.5s;
+        }
+
+        span:nth-child(6) {
+            top: 0;
+            right: 600px;
+            left: initial;
+            animation-delay: 1s;
+            animation-duration: 1.5s;
+        }
+
+        span:nth-child(7) {
+            top: 300px;
+            right: 0px;
+            left: initial;
+            animation-delay: 1s;
+            animation-duration: 1.5s;
+        }
+
+        span:nth-child(8) {
+            top: 0px;
+            right: 700px;
+            left: initial;
+            animation-delay: 1.4s;
+            animation-duration: 2s;
+        }
+
+        span:nth-child(9) {
+            top: 0px;
+            right: 100%;
+            left: initial;
+            animation-delay: 0.75s;
+            animation-duration: 2s;
+        }
+
+        span:nth-child(10) {
+            top: 0px;
+            right: 100%;
+            left: initial;
+            animation-delay: 2.75s;
+            animation-duration: 0.2s;
+        }
+
+        body {
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        .c1 {
+            width: 400px;
+            height: 500px;
+            color: white;
+            background-color: #c0bbbb;
+            padding: 40px;
+            text-align: left;
+            margin: auto;
+            border-radius: 10px;
+            margin-top: 69px;
+            opacity: 0.9 white;
+        }
+
+        .c2 {
+            text-align: left;
+        }
+
+        .sign {
+            width: 85%;
+            height: 40px;
+            padding: 10px;
+            text-align: center;
+            background-color: green;
+            color: white;
+            margin-top: 20px;
+            margin-left: 11px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sign:hover {
+            filter: drop-shadow(0 0 15px gold);
+        }
+
+        h1 {
+            padding-block-start: 0;
+            margin: 0;
+            width: 99%;
+            border-top: 1px solid black;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+            width: 100%;
+            padding-bottom: 10px;
+            color: black;
+        }
+
+        input {
+            width: 85%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        p {
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 20px;
+            margin-left: 27px;
+        }
+
+        .facebook,
+        .google,
+        .twitter,
+        .twitch {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .fb {
+            width: 25px;
+            height: 25px;
+            object-fit: cover;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-right: 10px;
+        }
+
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+
+        #id1 {
+            margin: 0;
+            width: 99%;
+        }
+    </style>
+    <script>
+        function Validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var unamePattern = /^[a-zA-Z0-9_]{8,30}$/;
+            var passPattern = /^[a-zA-Z0-9_]{8,30}$/;
+
+            if (username === "") {
+                alert("Please enter a Username. It cannot be left empty.");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Please enter a Password. It cannot be left empty.");
+                return false;
+            }
+
+            if (!unamePattern.test(username)) {
+                alert("Username should be alphanumeric, including an underscore, and between 8-30 characters.");
+                return false;
+            }
+
+            if (!passPattern.test(password)) {
+                alert("Password should be alphanumeric and between 8-30 characters.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </section>
+    <div class="c1">
+        <form class="c2" method="get" novalidate onsubmit="return Validate()" action="your-server-url-here"
+            action="file:///C:/Users/Hp/Desktop/FWD/FWD_Project-main/index.html">
+            <h2>Sign In</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password">
+
+            <button type="submit" class="sign">Sign In</button><br><br><br>
+            <h1></h1>
+            <p>Don't have an account? Click here to<a href="Registration.html"> Register</a></p>
+            <p id="id1">------------------------Or Continue With----------------------------</p>
+            <div class="buttons">
+                <a href="https://www.facebook.com/" class="facebook"><img src="facebook.png" class="fb"></a>
+                <a href="https://accounts.google.com/" class="google"><img src="google.jpg" class="fb"></a>
+                <a href="https://x.com/login" class="twitter"><img src="X.png" class="fb"></a>
+                <a href="https://www.twitch.tv/login    " class="twitch"><img src="twitch.svg" class="fb"></a>
+            </div>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>

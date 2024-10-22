@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color:#000000;
+            : linear-gradient(135deg, #1f1c2c, #928dab);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+            animation: animate 3s linear infinite;
+        }
+        span::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 1px;
+            background: linear-gradient(90deg, #fff, transparent);
+        }
+        @keyframes animate {
+            0% {
+                transform: rotate(315deg) translateX(0);
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(315deg) translateX(-780px);
+                opacity: 0;
+            }
+        }
+        span:nth-child(1) { top: 0; right: 0; left: initial; animation-delay: 0; animation-duration: 1.4s; }
+        span:nth-child(2) { top: 0; right: 80px; left: initial; animation-delay: 0.2s; animation-duration: 1.8s; }
+        span:nth-child(3) { top: 80px; right: 0px; left: initial; animation-delay: 0.4s; animation-duration: 2.2s; }
+        span:nth-child(4) { top: 0; right: 180px; left: initial; animation-delay: 0.6s; animation-duration: 2.1s; }
+        span:nth-child(5) { top: 0; right: 400px; left: initial; animation-delay: 0.8s; animation-duration: 2.5s; }
+        span:nth-child(6) { top: 0; right: 600px; left: initial; animation-delay: 1s; animation-duration: 1.5s; }
+        span:nth-child(7) { top: 300px; right: 0px; left: initial; animation-delay: 1s; animation-duration: 1.5s; }
+        span:nth-child(8) { top: 0px; right: 700px; left: initial; animation-delay: 1.4s; animation-duration: 2s; }
+        span:nth-child(9) { top: 0px; right: 100%; left: initial; animation-delay: 0.75s; animation-duration: 2s; }
+        span:nth-child(10) { top: 0px; right: 100%; left: initial; animation-delay: 2.75s; animation-duration: 0.2s; }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 5px;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
+            width: 85%;
+            padding: 6.9px;
+            margin: 10px 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+        input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder {
+            color: #ddd;
+        }
+        input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5e42a6;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #6c63ff;
+        }
+    </style>
+    <script>
+        function Validate() {
+            var firstname = document.getElementById("fname").value;
+            var lastname = document.getElementById("lname").value;
+            var age = document.getElementById("age").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var phone = document.getElementById("phone").value;
+            var SAP = document.getElementById("SAP").value;
+            var email = document.getElementById("email").value;
+
+            var ch_age = /^[0-9]{1,3}$/;
+            var CH_phone = /^[0-9]{10}$/;
+            var ch_email = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
+            var ch_username = /^[a-zA-Z0-9_.]{8,}$/;
+            var ch_password = /^.{8,30}$/;  // Password between 8 to 30 characters
+
+            if (!gender) {
+                alert("Please select a gender");
+                return false;
+            }
+            if (lastname == "") {
+                alert("The last name is empty");
+                return false;
+            }
+            if (firstname == "") {
+                alert("First name is empty");
+                return false;
+            }
+            if (age == "") {
+                alert("Age is left empty");
+                return false;
+            }
+            if (!ch_age.test(age)) {
+                alert("Please enter a valid age");
+                return false;
+            }
+            if (age < 18) {
+                alert("Player can't register as age is not legal");
+                return false;
+            }
+            if (username == "") {
+                alert("Please enter your username");
+                return false;
+            }
+            if (!ch_username.test(username)) {
+                alert("Enter a valid username (minimum 8 characters)");
+                return false;
+            }
+            if (password == "") {
+                alert("Please enter your password");
+                return false;
+            }
+            if (!ch_password.test(password)) {
+                alert("Password must be between 8 and 30 characters");
+                return false;
+            }
+            if (phone == "") {
+                alert("Enter your phone number");
+                return false;
+            }
+            if (!CH_phone.test(phone)) {
+                alert("Enter a valid phone number (10 digits)");
+                return false;
+            }
+            if (SAP == "") {
+                alert("Enter your SAP ID");
+                return false;
+            }
+            if (!CH_phone.test(SAP)) {
+                alert("Enter a valid SAP ID (10 digits)");
+                return false;
+            }
+            if (email == "") {
+                alert("Email is left empty");
+                return false;
+            }
+            if (!ch_email.test(email)) {
+                alert("Enter a valid email address");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </section>
+    <form method="get" novalidate action="http://127.0.0.1:5500/LOGin.html" onsubmit="return Validate()">
+        <div class="form-section">
+            <h2>Registration</h2>
+            <label>First Name:</label>
+            <input type="text" id="fname" placeholder="Chotu">
+            <label>Last Name:</label>
+            <input type="text" id="lname" placeholder="Vedant">
+            <label>Age:</label>
+            <input type="text" id="age" placeholder="18+">
+            <label>Gender:</label>
+            <label><input type="radio" value="male" name="gender"> Male &nbsp;<input type="radio" value="female" name="gender"> Female</label>
+            <label>Phone Number:</label>
+            <input type="text" id="phone" placeholder="1234567890">
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="xyz@gmail.com">
+            <label>SAP ID:</label>
+            <input type="text" id="SAP" placeholder="1234567890">
+            <label>Username:</label>
+            <input type="text" id="username" placeholder="min 8 characters">
+            <label>Password:</label>
+            <input type="password" id="password" placeholder="8-30 characters">
+        </div>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>
