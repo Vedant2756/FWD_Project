@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,14 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color:#000000;
-            : linear-gradient(135deg, #1f1c2c, #928dab);
+            background-color: #000000;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
         }
+
         section {
             position: absolute;
             top: 0;
@@ -25,6 +26,7 @@
             height: 100%;
             z-index: -1;
         }
+
         span {
             position: absolute;
             top: 50%;
@@ -36,6 +38,7 @@
             box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
             animation: animate 3s linear infinite;
         }
+
         span::before {
             content: '';
             position: absolute;
@@ -45,29 +48,102 @@
             height: 1px;
             background: linear-gradient(90deg, #fff, transparent);
         }
+
         @keyframes animate {
             0% {
                 transform: rotate(315deg) translateX(0);
                 opacity: 1;
             }
+
             70% {
                 opacity: 1;
             }
+
             100% {
                 transform: rotate(315deg) translateX(-780px);
                 opacity: 0;
             }
         }
-        span:nth-child(1) { top: 0; right: 0; left: initial; animation-delay: 0; animation-duration: 1.4s; }
-        span:nth-child(2) { top: 0; right: 80px; left: initial; animation-delay: 0.2s; animation-duration: 1.8s; }
-        span:nth-child(3) { top: 80px; right: 0px; left: initial; animation-delay: 0.4s; animation-duration: 2.2s; }
-        span:nth-child(4) { top: 0; right: 180px; left: initial; animation-delay: 0.6s; animation-duration: 2.1s; }
-        span:nth-child(5) { top: 0; right: 400px; left: initial; animation-delay: 0.8s; animation-duration: 2.5s; }
-        span:nth-child(6) { top: 0; right: 600px; left: initial; animation-delay: 1s; animation-duration: 1.5s; }
-        span:nth-child(7) { top: 300px; right: 0px; left: initial; animation-delay: 1s; animation-duration: 1.5s; }
-        span:nth-child(8) { top: 0px; right: 700px; left: initial; animation-delay: 1.4s; animation-duration: 2s; }
-        span:nth-child(9) { top: 0px; right: 100%; left: initial; animation-delay: 0.75s; animation-duration: 2s; }
-        span:nth-child(10) { top: 0px; right: 100%; left: initial; animation-delay: 2.75s; animation-duration: 0.2s; }
+
+        span:nth-child(1) {
+            top: 0;
+            right: 0;
+            left: initial;
+            animation-delay: 0;
+            animation-duration: 1.4s;
+        }
+
+        span:nth-child(2) {
+            top: 0;
+            right: 80px;
+            left: initial;
+            animation-delay: 0.2s;
+            animation-duration: 1.8s;
+        }
+
+        span:nth-child(3) {
+            top: 80px;
+            right: 0px;
+            left: initial;
+            animation-delay: 0.4s;
+            animation-duration: 2.2s;
+        }
+
+        span:nth-child(4) {
+            top: 0;
+            right: 180px;
+            left: initial;
+            animation-delay: 0.6s;
+            animation-duration: 2.1s;
+        }
+
+        span:nth-child(5) {
+            top: 0;
+            right: 400px;
+            left: initial;
+            animation-delay: 0.8s;
+            animation-duration: 2.5s;
+        }
+
+        span:nth-child(6) {
+            top: 0;
+            right: 600px;
+            left: initial;
+            animation-delay: 1s;
+            animation-duration: 1.5s;
+        }
+
+        span:nth-child(7) {
+            top: 300px;
+            right: 0px;
+            left: initial;
+            animation-delay: 1s;
+            animation-duration: 1.5s;
+        }
+
+        span:nth-child(8) {
+            top: 0px;
+            right: 700px;
+            left: initial;
+            animation-delay: 1.4s;
+            animation-duration: 2s;
+        }
+
+        span:nth-child(9) {
+            top: 0px;
+            right: 100%;
+            left: initial;
+            animation-delay: 0.75s;
+            animation-duration: 2s;
+        }
+
+        span:nth-child(10) {
+            top: 0px;
+            right: 100%;
+            left: initial;
+            animation-delay: 2.75s;
+            animation-duration: 0.2s;
+        }
 
         form {
             background-color: rgba(255, 255, 255, 0.1);
@@ -78,13 +154,16 @@
             color: #fff;
             width: 400px;
         }
+
         h1 {
             text-align: center;
             color: #fff;
         }
+
         .form-section {
             margin-bottom: 20px;
         }
+
         .form-section h2 {
             font-size: 18px;
             margin-bottom: 10px;
@@ -92,7 +171,11 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             padding-bottom: 5px;
         }
-        input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="file"] {
             width: 85%;
             padding: 6.9px;
             margin: 10px 0;
@@ -101,21 +184,30 @@
             border-radius: 5px;
             color: #fff;
         }
-        input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder {
+
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder,
+        input[type="email"]::placeholder {
             color: #ddd;
         }
-        input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus {
             outline: none;
             background-color: rgba(255, 255, 255, 0.3);
         }
+
         input[type="radio"] {
             margin-right: 5px;
         }
+
         label {
             display: block;
             font-size: 14px;
             color: #fff;
         }
+
         button {
             width: 100%;
             padding: 10px;
@@ -127,6 +219,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #6c63ff;
         }
@@ -149,16 +242,12 @@
             var ch_username = /^[a-zA-Z0-9_.]{8,}$/;
             var ch_password = /^.{8,30}$/;  // Password between 8 to 30 characters
 
-            if (!gender) {
-                alert("Please select a gender");
+            if (firstname == "") {
+                alert("First name is empty");
                 return false;
             }
             if (lastname == "") {
                 alert("The last name is empty");
-                return false;
-            }
-            if (firstname == "") {
-                alert("First name is empty");
                 return false;
             }
             if (age == "") {
@@ -171,6 +260,30 @@
             }
             if (age < 18) {
                 alert("Player can't register as age is not legal");
+                return false;
+            }
+            if (!gender) {
+                alert("Please select a gender");
+                return false;
+            }
+            if (phone == "") {
+                alert("Enter your phone number");
+                return false;
+            }
+            if (email == "") {
+                alert("Email is left empty");
+                return false;
+            }
+            if (!ch_email.test(email)) {
+                alert("Enter a valid email address");
+                return false;
+            }
+            if (SAP == "") {
+                alert("Enter your SAP ID");
+                return false;
+            }
+            if (!CH_phone.test(SAP)) {
+                alert("Enter a valid SAP ID (10 digits)");
                 return false;
             }
             if (username == "") {
@@ -189,34 +302,15 @@
                 alert("Password must be between 8 and 30 characters");
                 return false;
             }
-            if (phone == "") {
-                alert("Enter your phone number");
-                return false;
-            }
             if (!CH_phone.test(phone)) {
                 alert("Enter a valid phone number (10 digits)");
-                return false;
-            }
-            if (SAP == "") {
-                alert("Enter your SAP ID");
-                return false;
-            }
-            if (!CH_phone.test(SAP)) {
-                alert("Enter a valid SAP ID (10 digits)");
-                return false;
-            }
-            if (email == "") {
-                alert("Email is left empty");
-                return false;
-            }
-            if (!ch_email.test(email)) {
-                alert("Enter a valid email address");
                 return false;
             }
             return true;
         }
     </script>
 </head>
+
 <body>
     <section>
         <span></span>
@@ -234,13 +328,14 @@
         <div class="form-section">
             <h2>Registration</h2>
             <label>First Name:</label>
-            <input type="text" id="fname" placeholder="Chotu">
+            <input type="text" id="fname" placeholder="First Name">
             <label>Last Name:</label>
-            <input type="text" id="lname" placeholder="Vedant">
+            <input type="text" id="lname" placeholder="Last Name">
             <label>Age:</label>
             <input type="text" id="age" placeholder="18+">
             <label>Gender:</label>
-            <label><input type="radio" value="male" name="gender"> Male &nbsp;<input type="radio" value="female" name="gender"> Female</label>
+            <label><input type="radio" value="male" name="gender"> Male &nbsp;<input type="radio" value="female"
+                    name="gender"> Female</label>
             <label>Phone Number:</label>
             <input type="text" id="phone" placeholder="1234567890">
             <label>Email:</label>
@@ -255,4 +350,5 @@
         <button type="submit">SUBMIT</button>
     </form>
 </body>
+
 </html>
