@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Mr Dafoe|Kelly Slab|Londrina Sketch|Charm" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -224,16 +225,6 @@
             background-color: #6c63ff;
             filter: drop-shadow(0 0 15px gold);
         }
-
-        .img2 {
-            object-fit: cover;
-            margin-left: -194%;
-            margin-bottom: 334%;
-            scale: 0.6;
-        }
-        .cks{
-            margin-left: -172px;
-        }
     </style>
     <script>
         function Validate() {
@@ -251,7 +242,7 @@
             var CH_phone = /^[0-9]{10}$/;
             var ch_email = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
             var ch_username = /^[a-zA-Z0-9_.]{8,}$/;
-            var ch_password = /^.{8,30}$/;  // Password between 8 to 30 characters
+            var ch_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/;  // Password between 8 to 30 characters
 
             if (firstname == "") {
                 alert("First name is empty");
@@ -279,6 +270,10 @@
             }
             if (phone == "") {
                 alert("Enter your phone number");
+                return false;
+            }
+            if (!CH_phone.test(phone)) {
+                alert("Enter a valid phone number");
                 return false;
             }
             if (email == "") {
@@ -310,11 +305,7 @@
                 return false;
             }
             if (!ch_password.test(password)) {
-                alert("Password must be between 8 and 30 characters");
-                return false;
-            }
-            if (!CH_phone.test(phone)) {
-                alert("Enter a valid phone number (10 digits)");
+                alert("Password must be between 8 and 30 characters and include one capital one small letter minimum and special character");
                 return false;
             }
             return true;
@@ -335,9 +326,6 @@
         <span></span>
         <span></span>
     </section>
-    <div class="cks">
-        <img src="public/images/vector.svg" alt="bad luck and a good image" class="img2">
-    </div>
     <form method="get" novalidate action="http://127.0.0.1:5500/LOGin.html" onsubmit="return Validate()">
         <div class="form-section">
             <h2>Registration</h2>

@@ -1,24 +1,18 @@
-const express = require('express')
-const path = require('path')
-const app = express()
-const port = 3000
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
 
-const vedantmiddleware = (req,res, next)=>{
-  console.log(req)
-  next()
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
 }
-app.use(express.static(path.join(__dirname, "tut")))
-// app.use(vedantmiddleware)
-
-app.get('/hello/:name', (req, res) => {
-  res.send('Hello World!' + " " + req.params.name)
-})
-app.get('/about', (req, res) => {
-  // res.send('about!')
-  // res.sendFile(__dirname + '/about.html')
-  // res.status(500)
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})

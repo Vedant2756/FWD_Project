@@ -189,22 +189,27 @@ span:nth-child(10) {
     justify-content: center;
     border: 1px solid #292929;
 }
-a:link{
+
+a:link {
     text-decoration: none;
     color: white;
 }
-a:visited{
+
+a:visited {
     text-decoration: none;
     color: white;
 }
-a:active{
+
+a:active {
     text-decoration: none;
     color: white;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
     color: white;
 }
+
 .styled-button::before {
     content: "";
     position: absolute;
@@ -271,10 +276,63 @@ header {
 }
 
 .logo {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
-    font-family: "Londrina Sketch";
+    font-family: "Charm";
+}
 
+.btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: rgb(255, 27, 0);
+    background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+}
+
+.btn-5:hover {
+    color: #f0094a;
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-5:before,
+.btn-5:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #f0094a;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.btn-5:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.btn-5:hover:before,
+.btn-5:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+.noz {
+    margin-left: 10px;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
 }
 
 .auth-buttons button {
@@ -349,6 +407,31 @@ header {
     border: none;
     background-color: #1c1c1c;
     color: white;
+    border-radius: 20px;
+}
+
+#mySearch {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+}
+
+#myMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: block
+}
+
+#myMenu li a:hover {
+    background-color: #eee;
     border-radius: 20px;
 }
 

@@ -7,13 +7,11 @@
   <link rel="stylesheet" href="index.css">
   <title>NMIMS Stake</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css?family=Mr Dafoe|Kelly Slab|Londrina Sketch" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mr Dafoe|Kelly Slab|Londrina Sketch|Charm" rel="stylesheet">
 </head>
 
 <body>
   <section>
-    <span></span>
-    <span></span>
     <span></span>
     <span></span>
     <span></span>
@@ -27,12 +25,13 @@
     <header>
       <div class="logo">NMIMS GAMBIX</div>
       <div class="auth-buttons">
-
+        <a href="date.html"><button class="noz">NOZ Points <p id="output"></p></button></a>
         <a href="Login/LOGin.html"><button class="boton-elegante">SIGN IN</button></a>
 
         <a href="Login/Registration.html"><button class="styled-button">
-          Register Now</a>
-          <a href="Login/Registration.html"><div class="inner-button">
+            Register Now</a>
+        <a href="Login/Registration.html">
+          <div class="inner-button">
             <svg id="Arrow" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="30px" width="30px"
               class="icon">
               <defs>
@@ -45,38 +44,76 @@
                 d="M4 15a1 1 0 0 0 1 1h19.586l-4.292 4.292a1 1 0 0 0 1.414 1.414l6-6a.99.99 0 0 0 .292-.702V15c0-.13-.026-.26-.078-.382a.99.99 0 0 0-.216-.324l-6-6a1 1 0 0 0-1.414 1.414L24.586 14H5a1 1 0 0 0-1 1z">
               </path>
             </svg>
-          </a>
-          </div>
-        </button>
-
+        </a>
       </div>
-    </header>
-    <div class="main-content">
-      <div class="offer-banner">
-        <p>CLAIM</p>
-        <p>Free NOZ!</p>
-        <br>
-        <button class="claim-button">CLAIM</button>
-      </div>
+      </button>
 
-
-
-      <div class="search-bar">
-        <input type="text" placeholder=" Search your game" type=" image">
-      </div>
-      <section class="games-section">
-        <h2>GAMES</h2>
-        <div class="game-cards">
-          <a href="mines/index1.html" class="game-card">
-            <center><img id="img1" src="mines/diamondedit.png"></center></img>
-          </a>
-          <div class="game-card"></div>
-          <div class="game-card"></div>
-          <div class="game-card"></div>
-        </div>
-      </section>
-    </div>
   </div>
+  </header>
+  <div class="main-content">
+    <div class="offer-banner">
+      <p>CLAIM</p>
+      <p>Free NOZ!</p>
+      <br>
+      <button class="claim-button" onclick="countClicks()">CLAIM</button>
+    </div>
+
+
+
+    <div class="search-bar">
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+
+      <ul id="myMenu">
+        <li><a href="mines/index1.html">Mines</a></li>
+        <li><a href="Login/Form2.html">Multipiler</a></li>
+      </ul>
+    </div>
+    <section class="games-section">
+      <h2>GAMES</h2>
+      <div class="game-cards">
+        <a href="mines/index1.html" class="game-card">
+          <center><img id="img1" src="mines/diamondedit.png"></center></img>
+        </a>
+        <a href="hangman/index.html" class="game-card">
+          <center><img id="img1" src="hangman/images/hangman-6.svg"></center></img>
+        </a>
+        <a href="Game in HTML CSS & JavaScript/index.html" class="game-card">
+          <center><img src="img1" src="mines/bombedit.png"></center></img>
+        </a>
+      </div>
+    </section>
+  </div>
+  </div>
+  <script>
+    function myFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("mySearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myMenu");
+      li = ul.getElementsByTagName("li");
+
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+
+    var count = 0;
+    var output = document.getElementById("output");
+    function countClicks() {
+      if(count<1000){
+      count = count + 100;
+      output.innerHTML = count;
+    }
+    else{
+      alert("You have reached your limit for collecting Free NOZ")
+    }
+    }
+  </script>
 </body>
 
 </html>
