@@ -138,7 +138,7 @@ span:nth-child(10) {
 .boton-elegante {
     padding: 15px 30px;
     border: 2px solid #2c2c2c;
-    background-color: #1a1a1a;
+    background: linear-gradient(to bottom, #292929, #000000);
     color: #ffffff;
     font-size: 1.2rem;
     cursor: pointer;
@@ -364,6 +364,7 @@ header {
 .game-cards {
     display: flex;
     gap: 20px;
+    background-color: #121212;
 }
 
 .game-card:hover {
@@ -375,6 +376,7 @@ header {
     width: 215px;
     height: 200px;
     object-fit: cover;
+    background-color: #121212;
 }
 
 .game-card {
@@ -383,4 +385,5 @@ header {
     background-color: #cccccc;
     border-radius: 10px;
     cursor: pointer;
+    background-color: #121212;
 }
