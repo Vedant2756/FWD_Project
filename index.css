@@ -461,6 +461,12 @@ header {
     object-fit: cover;
     background-color: #121212;
 }
+#img2 {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    background-color: #121212;
+}
 
 .game-card {
     width: 100%;
